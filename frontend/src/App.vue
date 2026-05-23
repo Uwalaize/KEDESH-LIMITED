@@ -103,7 +103,7 @@
               <ul class="footer-contact-list">
                 <li>
                   <i class="fas fa-map-marker-alt"></i>
-                  <span>Plot No. 123, Kikuyu Street<br>P.O. Box 456, Dodoma, Tanzania</span>
+                  <span>Kizota, Sokoine Street <br> Dodoma, Tanzania</span>
                 </li>
                 <li>
                   <i class="fas fa-phone-alt"></i>
@@ -111,11 +111,11 @@
                 </li>
                 <li>
                   <i class="fas fa-envelope"></i>
-                  <span>info@kedesh.co.tz</span>
+                  <span>info@kedeshlimited.com</span>
                 </li>
                 <li>
                   <i class="fas fa-clock"></i>
-                  <span>Mon - Fri: 8:30 AM - 5:30 PM</span>
+                  <span>Mon - Sat: 8:00 AM - 6:00 PM</span>
                 </li>
               </ul>
             </div>
@@ -135,7 +135,15 @@
               <div class="social-section">
                 <h5 class="footer-title mt-4">Follow Us</h5>
                 <div class="social-icons">
-                  <a href="#" class="social-icon" v-for="social in socialLinks" :key="social.name" :style="{ background: social.color }">
+                  <a 
+                    v-for="social in socialLinks" 
+                    :key="social.name" 
+                    :href="social.url" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="social-icon" 
+                    :style="{ background: social.color }"
+                  >
                     <i :class="social.icon"></i>
                   </a>
                 </div>
@@ -156,7 +164,7 @@
               </div>
               <div class="col-md-6 text-md-end">
                 <p class="credits">
-                  Designed with <i class="fas fa-heart text-danger"></i> by CodeMotion co.ltd
+                  Designed with <i class="fas fa-heart text-danger"></i> by Kedesh Limited
                 </p>
               </div>
             </div>
@@ -174,7 +182,7 @@ import AboutComponent from './components/AboutComponent.vue'
 import ContactComponent from './components/ContactComponent.vue'
 import PrivacyComponent from './components/PrivacyComponent.vue'
 
-// Option 1: Import logo (Recommended)
+// Import logo
 import logoImage from './assets/logo.png'
 
 export default {
@@ -191,12 +199,7 @@ export default {
       currentPage: 'home',
       newsletterEmail: '',
       currentYear: new Date().getFullYear(),
-      // Option 1: Use imported logo
       logoPath: logoImage,
-      // Option 2: If logo not working, uncomment below and comment Option 1
-      // logoPath: '/logo.png',
-      // Option 3: Use online placeholder (temporary)
-      // logoPath: 'https://ui-avatars.com/api/?background=2563eb&color=fff&size=100&rounded=true&bold=true&name=K',
       navItems: [
         { page: 'home', label: 'Home' },
         { page: 'services', label: 'Services' },
@@ -204,11 +207,18 @@ export default {
         { page: 'contact', label: 'Contact' }
       ],
       socialLinks: [
-        { name: 'Facebook', icon: 'fab fa-facebook-f', color: '#1877f2' },
-        { name: 'Twitter', icon: 'fab fa-twitter', color: '#1da1f2' },
-        { name: 'LinkedIn', icon: 'fab fa-linkedin-in', color: '#0077b5' },
-        { name: 'Instagram', icon: 'fab fa-instagram', color: '#e4405f' },
-        { name: 'YouTube', icon: 'fab fa-youtube', color: '#ff0000' }
+        { 
+          name: 'Facebook', 
+          icon: 'fab fa-facebook-f', 
+          color: '#1877f2',
+          url: 'https://web.facebook.com/profile.php?id=100071071982872' // Replace with your Facebook page URL
+        },
+        { 
+          name: 'Instagram', 
+          icon: 'fab fa-instagram', 
+          color: '#e4405f',
+          url: 'https://www.instagram.com/kedeshltd/' // Replace with your Instagram URL
+        }
       ]
     }
   },
@@ -247,7 +257,6 @@ export default {
       }
     },
     handleImageError(e) {
-      // If logo fails to load, show fallback
       e.target.src = 'https://ui-avatars.com/api/?background=2563eb&color=fff&size=100&rounded=true&bold=true&name=K'
     }
   },

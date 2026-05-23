@@ -200,7 +200,7 @@ export default {
       stats: [
         { icon: 'fas fa-project-diagram', label: 'Projects Completed', suffix: '+', progress: '78%', target: 148 },
         { icon: 'fas fa-users', label: 'Happy Clients', suffix: '+', progress: '85%', target: 112 },
-        { icon: 'fas fa-calendar-alt', label: 'Years of Excellence', suffix: '', progress: '92%', target: 9 }
+        { icon: 'fas fa-calendar-alt', label: 'Years of Excellence', suffix: '', progress: '92%', target: 3 }
       ],
       services: [
         { 
