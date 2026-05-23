@@ -75,7 +75,7 @@
                   </div>
                 </div>
                 <p class="footer-description">
-                  Kedesh Limited ni kampuni inayoongoza katika kutoa huduma za digital marketing, 
+                  Kedesh Limited ni kampuni inayojihusisha na kutoa huduma za digital marketing, 
                   uzalishaji wa video, na utengenezaji wa mifumo ya kisasa. Tunawawezesha biashara 
                   kufikia upeo wao wa ukuaji.
                 </p>
@@ -123,15 +123,6 @@
             <!-- Newsletter & Social -->
             <div class="col-lg-3 col-md-6">
               <h5 class="footer-title">Stay Connected</h5>
-              <p class="newsletter-text">Subscribe to get latest updates and offers</p>
-              <div class="newsletter-form">
-                <div class="input-group">
-                  <input type="email" class="form-control" placeholder="Your email address" v-model="newsletterEmail">
-                  <button class="btn-subscribe" @click="subscribeNewsletter">
-                    <i class="fas fa-paper-plane"></i>
-                  </button>
-                </div>
-              </div>
               <div class="social-section">
                 <h5 class="footer-title mt-4">Follow Us</h5>
                 <div class="social-icons">
@@ -211,13 +202,13 @@ export default {
           name: 'Facebook', 
           icon: 'fab fa-facebook-f', 
           color: '#1877f2',
-          url: 'https://web.facebook.com/profile.php?id=100071071982872' // Replace with your Facebook page URL
+          url: 'https://www.facebook.com/share/1HCJxANdbk/?mibextid=wwXIfr' // Replace with your Facebook page URL
         },
         { 
           name: 'Instagram', 
           icon: 'fab fa-instagram', 
           color: '#e4405f',
-          url: 'https://www.instagram.com/kedeshltd/' // Replace with your Instagram URL
+          url: 'https://www.instagram.com/kedesh_limited?igsh=MXJoNTkwamZlNmQ1MA%3D%3D&utm_source=qr' // Replace with your Instagram URL
         }
       ]
     }

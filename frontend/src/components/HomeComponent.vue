@@ -99,7 +99,7 @@
                 <i :class="service.icon"></i>
                 <h4>Learn More</h4>
                 <p class="service-back-desc">{{ service.fullDescription }}</p>
-                <!-- Explore button - uses the same goToServices method -->
+                <!-- Explore button - navigates to services page -->
                 <button class="btn-service" @click="goToServices">
                   Explore <i class="fas fa-arrow-right"></i>
                 </button>
@@ -255,10 +255,6 @@ export default {
     this.$nextTick(() => {
       this.animateNumbers()
     })
-    
-    // Check if parent navigation is available
-    console.log('Parent component:', this.$parent ? 'Available' : 'Not available')
-    console.log('Navigate function:', this.$parent && this.$parent.navigate ? 'Available' : 'Not available')
   },
   methods: {
     animateNumbers() {
@@ -312,31 +308,25 @@ export default {
       const statCards = document.querySelectorAll('.stat-card')
       statCards.forEach(card => observer.observe(card))
     },
-    // Navigation methods that work with the global window event
+    // Navigation methods that work with the parent App component
     goToServices() {
-      console.log('Navigating to services page...')
-      // Method 1: Try parent navigation
+      // Try multiple methods to ensure navigation works
       if (this.$parent && typeof this.$parent.navigate === 'function') {
         this.$parent.navigate('services')
         return
       }
       
-      // Method 2: Use window hash
+      // Fallback: change hash directly
       window.location.hash = 'services'
       window.scrollTo({ top: 0, behavior: 'smooth' })
-      
-      // Method 3: Dispatch custom event
-      window.dispatchEvent(new CustomEvent('navigate', { detail: 'services' }))
     },
     goToContact() {
-      console.log('Navigating to contact page...')
       if (this.$parent && typeof this.$parent.navigate === 'function') {
         this.$parent.navigate('contact')
         return
       }
       window.location.hash = 'contact'
       window.scrollTo({ top: 0, behavior: 'smooth' })
-      window.dispatchEvent(new CustomEvent('navigate', { detail: 'contact' }))
     }
   }
 }

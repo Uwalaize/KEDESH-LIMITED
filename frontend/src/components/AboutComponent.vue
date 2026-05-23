@@ -191,7 +191,7 @@
                 </div>
                 <div class="contact-item">
                   <i class="fas fa-envelope"></i>
-                  <span>info@kedesh.co.tz</span>
+                  <span>info@kedeshlimited.com</span>
                 </div>
                 <div class="contact-item">
                   <i class="fas fa-clock"></i>
